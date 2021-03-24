@@ -1,0 +1,15 @@
+{
+  "name": "datagenerator",
+  "version": "1.0.0",
+  "description": "A generator for weather data",
+  "main": "generator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "mqtt": "4.2.6",
+    "rxjs": "6.6.6"
+  },
+  "author": "",
+  "license": "ISC"
+}
