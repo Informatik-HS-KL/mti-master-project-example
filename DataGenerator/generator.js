@@ -5,10 +5,13 @@ const { waitForDebugger } = require('inspector');
 const mqtt = require('mqtt');
 const { interval } = require('rxjs');
 
-const client = mqtt.connect('mqtt://localhost');
+const client = mqtt.connect('mqtt://mosquitto');
+
+console.log(`Starting weather data generator`);
 
 // Generate test data
 client.on('connect', () => {
+    console.log(`Connected to MQTT Broker`);
     generateWeatherData();
 })
 
@@ -23,6 +26,8 @@ function generateWeatherData() {
 
     let temp = minTemp;
     let hum = minHum;
+
+    console.log(`Starting generation of weather data`);
     setInterval(function(){ 
         
         // Generate new temperature
@@ -32,9 +37,10 @@ function generateWeatherData() {
         }
         temp+=tempStep;
 
-        console.log(`tempStep: ${tempStep}`);
-        console.log(`weather/temperature: ${temp}`);
-        client.publish('weather/temperature', ''+temp);
+        //console.log(`tempStep: ${tempStep}`);
+        //console.log(`weather/temperature: ${temp}`);
+        //client.publish('weather/humidity', ''+temp);
+        client.publish('weather/temperature', JSON.stringify({'value': temp, 'timestamp': Date.now}));
 
         // Generate new humidity
         let humStep = +(getRandomValue(-2, 3)/10).toFixed(2);
@@ -43,9 +49,11 @@ function generateWeatherData() {
         }
         hum+=humStep;
 
-        console.log(`humStep: ${humStep}`);
-        console.log(`weather/humidity: ${hum}`);
-        client.publish('weather/humidity', ''+hum);
+        //console.log(`humStep: ${humStep}`);
+        //console.log(`weather/humidity: ${hum}`);
+        //client.publish('weather/humidity', ''+hum);
+        client.publish('weather/humidity', JSON.stringify({'value': hum, 'timestamp': Date.now}));
+
 
     }, 3000);
 }

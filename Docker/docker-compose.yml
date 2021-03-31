@@ -33,11 +33,20 @@ services:
       - ${DATA_DIR}/grafana:/var/lib/grafana
     restart: always
 
-  #mqttbridge:
-  #  build: ../02-bridge
-  #  image: iothon/mqttbridge
-  #  container_name: mqttbridge
-  #  depends_on:
-  #    - mosquitto
-  #    - influxdb
-  #  restart: always
+  generator:
+    build: ../DataGenerator
+    image: hskl-mti/generator
+    container_name: generator
+    depends_on:
+      - mosquitto
+    restart: always
+
+  mqtt2influx:
+    build: ../Mqtt2Influx
+    image: hskl-mti/mqtt2influx
+    container_name: mqtt2influx
+    depends_on:
+      - mosquitto
+      - influxdb
+      - grafana
+    restart: always
