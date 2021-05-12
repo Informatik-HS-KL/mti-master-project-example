@@ -1,6 +1,6 @@
 # mti-master-project-example
 
-Ein Beispielprojekt für das Modul Mensch-Technik-Interaktion im Mastestudiengang Digital Engineering
+Ein Beispielprojekt für das Modul Mensch-Technik-Interaktion im Masterstudiengang Digital Engineering
 
 # Aufgabenstellung an die Studierenden
 
