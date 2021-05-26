@@ -1,10 +1,7 @@
 /**
  * Generator for MQTT messages
  */
-const { waitForDebugger } = require('inspector');
 const mqtt = require('mqtt');
-const { interval } = require('rxjs');
-
 const client = mqtt.connect('mqtt://mosquitto');
 
 console.log(`Starting weather data generator`);
@@ -37,9 +34,6 @@ function generateWeatherData() {
         }
         temp+=tempStep;
 
-        //console.log(`tempStep: ${tempStep}`);
-        //console.log(`weather/temperature: ${temp}`);
-        //client.publish('weather/humidity', ''+temp);
         client.publish('weather/temperature', JSON.stringify({'value': temp, 'timestamp': Date.now}));
 
         // Generate new humidity
@@ -49,9 +43,6 @@ function generateWeatherData() {
         }
         hum+=humStep;
 
-        //console.log(`humStep: ${humStep}`);
-        //console.log(`weather/humidity: ${hum}`);
-        //client.publish('weather/humidity', ''+hum);
         client.publish('weather/humidity', JSON.stringify({'value': hum, 'timestamp': Date.now}));
 
 
