@@ -2,7 +2,7 @@ version: '3'
 
 services:
   mosquitto:
-    image: eclipse-mosquitto:latest
+    image: eclipse-mosquitto:2.0.9
     container_name: mosquitto
     ports:
       - 1883:1883
@@ -14,7 +14,7 @@ services:
     restart: always
 
   influxdb:
-    image: influxdb:latest
+    image: influxdb:1.8.0
     container_name: influxdb
     ports:
       - 8086:8086
@@ -23,7 +23,7 @@ services:
     restart: always
 
   grafana:
-    image: grafana/grafana:latest
+    image: grafana/grafana:7.0.0
     container_name: grafana
     depends_on:
       - influxdb
