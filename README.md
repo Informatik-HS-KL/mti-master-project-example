@@ -1,6 +1,12 @@
 # mti-master-project-example
 
-Ein Beispielprojekt für das Modul Mensch-Technik-Interaktion im Masterstudiengang Digital Engineering
+Ein Beispielprojekt für das Modul Mensch-Technik-Interaktion im Masterstudiengang Digital Engineering.
+
+Zum Starten:
+- Ins Verzeichnis `Docker` wechseln
+- Befehl `docker-compose up` ausführen
+- Im Browser Grafana unter `http://localhost:3000` aufrufen
+- Mit Benutzernamen `admin` und Passwort `admin` anmelden (ggf. muss ein neues Passwort vergeben werden)
 
 # Aufgabenstellung an die Studierenden
 
