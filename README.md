@@ -6,7 +6,8 @@ Zum Starten:
 - Ins Verzeichnis `Docker` wechseln
 - Befehl `docker-compose up` ausführen
 - Im Browser Grafana unter `http://localhost:3000` aufrufen
-- Mit Benutzernamen `admin` und Passwort `admin` anmelden (ggf. muss ein neues Passwort vergeben werden)
+- Mit Benutzernamen `admin` und Passwort `admin` anmelden (ggf. muss ein neues Passwort vergeben werden; der Schritt kann übersprungen werden)
+- ``
 
 # Aufgabenstellung an die Studierenden
 
@@ -22,7 +23,7 @@ Ein weiteres denkbares Szenario ist die Verwendung einer IoT-Lösung wie OpenHab
 
 # Beschreibung
 
-Im Rahmen des vorliegenden Beispiels kommt Grafana zum Einsatz, es wären allerdings auch eigene Lösungen auf Basis von diversen Desktop Frameworks wie WPF, Qt aber auch Webtechnologie möglich.
+Im Rahmen des vorliegenden Beispiels kommt Grafana zum Einsatz. Ihre Lösung sollte allerdings auf Basis einer der diversen Desktop Frameworks wie WPF, Qt oder aber auch Web- oder Mobiletechnologie (Angular, Vue, React, Flutter, Android, ...) entstehen.
 
 
 # Eingesetzte Technologien
