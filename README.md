@@ -7,7 +7,8 @@ Zum Starten:
 - Befehl `docker-compose up` ausführen
 - Im Browser Grafana unter `http://localhost:3000` aufrufen
 - Mit Benutzernamen `admin` und Passwort `admin` anmelden (ggf. muss ein neues Passwort vergeben werden; der Schritt kann übersprungen werden)
-- ``
+
+Nach der Anmeldung kann in der linken Leiste im Bereich „Manage“ eine Übersicht der enthaltenen Dashboards eingesehen werden. In der Übersicht befindet sich auch das vorbereitete Dashboard „Temperature and humidity“, welches mit einem Klick aufgerufen werden kann.
 
 # Aufgabenstellung an die Studierenden
 
