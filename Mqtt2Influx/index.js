@@ -9,6 +9,8 @@ const client = mqtt.connect('mqtt://mosquitto');
 const influx = new Influx.InfluxDB({
     host: 'influxdb',
     database: 'weather',
+    username: 'admin',
+    password: 'admin',
     schema: [
       {
         measurement: 'temperature',
