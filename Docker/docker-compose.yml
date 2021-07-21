@@ -14,10 +14,17 @@ services:
     restart: always
 
   influxdb:
-    image: influxdb:1.8.0
+    #image: influxdb:1.8.0
+    image: influxdb:2.0.7-alpine
     container_name: influxdb
     ports:
       - 8086:8086
+    environment:
+      - DOCKER_INFLUXDB_INIT_USERNAME=admin
+      - DOCKER_INFLUXDB_INIT_PASSWORD=admin
+      - DOCKER_INFLUXDB_INIT_ORG=hs-kl
+      - DOCKER_INFLUXDB_INIT_BUCKET=weather
+      - DEBUG=1
     volumes:
       - ${DATA_DIR}/influxdb:/var/lib/influxdb
     restart: always
